@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Gmail Spam Filter",
+  "version": "1.0",
+  "permissions": ["scripting", "storage", "activeTab"],
+  "host_permissions": ["https://mail.google.com/"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["firebase-app.js", "firebase-database.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' https://www.gstatic.com; object-src 'self'"
+  }
+}
