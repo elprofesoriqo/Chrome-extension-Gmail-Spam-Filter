@@ -4,7 +4,7 @@ The Gmail Spam Filter is a Chrome extension that automatically identifies and mo
 
 ## Technologies
 
-- Python 3.x
+- Python
 - FastAPI
 - scikit-learn
 - Chrome Extension API
